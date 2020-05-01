@@ -26,5 +26,12 @@
 </section>
 </div><!-- /.main-wrapper -->
 <footer>JavaScript Samples</footer>
+<script src="../../_common/scripts/js.cookie.js"></script>
+<script>
+  document.getElementById('form').onsubmit = function(){
+    Cookies.set('answered', 'yes', {expires: 7});
+  }
+
+</script>
 </body>
 </html>
