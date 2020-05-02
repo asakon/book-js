@@ -51,11 +51,10 @@
 <script>
   var thumbs = document.querySelectorAll('.thumb');
 
-  // すべての要素にイベントを設定するには、for文が使える
+  // すべての要素のイベントプロパティに関数を設定できる
   for (var i = 0; i < thumbs.length; i++) {
     thumbs[i].onclick = function() {
-      // data-*属性を取得して出力
-      console.log(this.dataset.image);
+      document.getElementById('bigimg').src = this.dataset.image;
     }
   }
 </script>
