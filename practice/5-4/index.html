@@ -50,12 +50,14 @@
 <footer>JavaScript Samples</footer>
 <script>
   var thumbs = document.querySelectorAll('.thumb');
-  // get NodeList object
-  console.log(thumbs);
-  
-  // for (var i = 0; i < thumbs.length; i++) {
-  //   console.log(thumbs[i]);
-  // }
+
+  // すべての要素にイベントを設定するには、for文が使える
+  for (var i = 0; i < thumbs.length; i++) {
+    thumbs[i].onclick = function() {
+      // data-*属性を取得して出力
+      console.log(this.dataset.image);
+    }
+  }
 </script>
 </body>
 </html>
