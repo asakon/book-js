@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>画像の切り替え</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+  .center {
+    margin: 0 auto;
+    width: 50%;
+  }
+  ul {
+    margin: 0; /* reset */
+    padding: 0; /* reset */
+    overflow: hidden;
+    list-style: none;
+  }
+  li {
+    float: left;
+    margin-right: 1%;
+    width: 24%;
+  }
+  li img {
+    max-width: 100%;
+  }</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>画像の切り替え</h1>
+<h2>data-*属性</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<div class="center">
+    <div><img src="img1.jpg" alt="" id="bigimg"></div>
+    <ul>
+      <li><img src="thumb-img1.jpg" alt="" class="thumb" data-image="img1.jpg"></li>
+      <li><img src="thumb-img2.jpg" alt="" class="thumb" data-image="img2.jpg"></li>
+      <li><img src="thumb-img3.jpg" alt="" class="thumb" data-image="img3.jpg"></li>
+      <li><img src="thumb-img1.jpg" alt="" class="thumb" data-image="img1.jpg"></li>
+      <li><img src="thumb-img2.jpg" alt="" class="thumb" data-image="img2.jpg"></li>
+    </ul>
+  </div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+  var thumbs = document.querySelectorAll('.thumb');
+
+  // すべての要素のイベントプロパティに関数を設定できる
+  for (var i = 0; i < thumbs.length; i++) {
+    thumbs[i].onclick = function() {
+      document.getElementById('bigimg').src = this.dataset.image;
+    }
+  }
+</script>
+</body>
+</html>
