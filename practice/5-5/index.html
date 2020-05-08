@@ -60,5 +60,24 @@
 </section>
 </div><!-- /.main-wrapper -->
 <footer>JavaScript Samples</footer>
+<script>
+  var images = ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg', 'images/image5.jpg'];
+  var current = 0;
+  var changeImage = function(num) {
+    if(current + num >=0 && current + num < images.length) {
+      current += num;
+      document.getElementById('main_image').src = images[current];
+    }
+  };
+
+  document.getElementById('prev').onclick = function() {
+    changeImage(-1);
+  }
+  document.getElementById('next').onclick = function() {
+    changeImage(1);
+  }
+
+
+</script>
 </body>
 </html>
