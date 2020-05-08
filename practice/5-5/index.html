@@ -85,6 +85,18 @@ var pageNum = function () {
     }
   };
 
+// 画像のプリロード処理
+var preloadImage = function(path) {
+  var imgTag = document.createElement('img');
+  imgTag.src = path;
+}
+
+// プリロードする  
+for (var i = 0; i < images.length; i++) {
+  preloadImage(images[i]);
+}
+
+
 // init
   pageNum();
 
