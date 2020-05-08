@@ -29,7 +29,12 @@
 <script src="../../_common/scripts/js.cookie.js"></script>
 <script>
   document.getElementById('form').onsubmit = function(){
-    Cookies.set('answered', 'yes', {expires: 7});
+    if(Cookies.get('answered') === 'yes') {
+      window.alert('回答済みです。アンケートの回答は1回しかできません。');
+      return false;
+    } else {
+      Cookies.set('answered', 'yes', {expires: 7});
+    }
   }
 
 </script>
