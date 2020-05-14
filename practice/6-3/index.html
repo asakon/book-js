@@ -67,5 +67,25 @@
 </section>
 </div><!-- /.main-wrapper -->
 <footer>JavaScript Samples</footer>
+<script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    $.ajax({url: 'data.json', dataType: 'json'}).done(function(data) {
+      $(data).each(function() {
+
+        if(this.crowded === 'yes') {
+          var idName = '#' + this.id;
+          $(idName).find('.check').addClass('crowded');
+        }
+
+      });
+    })
+    
+    .fail(function() {
+        window.alert('読み込みエラー');
+    });
+    
+  });
+</script>
 </body>
 </html>
