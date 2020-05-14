@@ -80,10 +80,19 @@
 
       });
     })
-    
+
     .fail(function() {
         window.alert('読み込みエラー');
     });
+
+    // JSONを見てついたクラスに応じてスタイリング用のクラスを追加する
+    $('.check').on('click', function() {
+      if($(this).hasClass('crowded')) {
+        $(this).text('残席わずか').addClass('red');
+      } else {
+        $(this).text('お席あります').addClass('green');
+      }
+    })
     
   });
 </script>
