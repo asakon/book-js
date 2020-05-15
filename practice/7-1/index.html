@@ -45,8 +45,14 @@
         }
 
         var permaLink = $(this).find('link').text();
+
+        var pubDt = new Date($(this).find('pubDate').text());
+        var dateString = '(' + pubDt.getFullYear() + '/'
+                                       + (pubDt.getMonth() + 1) + '/'
+                                       + pubDt.getDate() + ')';
         
         $('#latest').append(
+          
           $('<li></li>').append(
             $('<a></a>')
             .attr({
@@ -55,6 +61,8 @@
             })
             .text(itemTitle)
           )
+
+          .append(dateString)
         )
 
       });
