@@ -39,6 +39,11 @@
       $(data).find('channel item').each(function() {
 
         var itemTitle = $(this).find('title').text();
+
+        if(itemTitle === '') {
+          itemTitle = '(タイトルなし)'
+        }
+        
         var permaLink = $(this).find('link').text();
         
         $('#latest').append(
