@@ -43,13 +43,16 @@
         if(itemTitle === '') {
           itemTitle = '(タイトルなし)'
         }
-        
+
         var permaLink = $(this).find('link').text();
         
         $('#latest').append(
           $('<li></li>').append(
             $('<a></a>')
-            .attr('href', permaLink)
+            .attr({
+              href: permaLink,
+              target: '_blank'
+            })
             .text(itemTitle)
           )
         )
