@@ -41,7 +41,7 @@
         var itemTitle = $(this).find('title').text();
 
         if(itemTitle === '') {
-          itemTitle = '(タイトルなし)'
+          itemTitle = 'タイトルなし'
         }
 
         var permaLink = $(this).find('link').text();
@@ -52,7 +52,7 @@
                                        + pubDt.getDate() + ')';
         
         $('#latest').append(
-          
+
           $('<li></li>').append(
             $('<a></a>')
             .attr({
