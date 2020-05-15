@@ -20,5 +20,29 @@
 </section>
 </div><!-- /.main-wrapper -->
 <footer>JavaScript Samples</footer>
+<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    var rssURL = "https://wpl25.wordpress.com/feed/";
+
+    $.ajax({
+      url: 'cdxml.php',
+      type: 'GET',
+      dataType: 'xml',
+      data: {
+        url: rssURL
+      }
+    })
+
+    .done(function(data) {
+      console.log(data);
+    })
+
+    .fail(function(data) {
+      window.alert('データの読み込みに失敗しました。');
+    });
+
+  });
+</script>
 </body>
 </html>
